@@ -1,0 +1,57 @@
+// import React, { useState, useEffect } from "react";
+// import axios from "axios";
+// import { Button } from "reactstrap";
+// import { base_url } from "../ApiServices/BackendAPIs";
+
+// function AdminQueryExecutionPage({ adminAuId }) {
+//   const [queries, setQueries] = useState([]);
+
+//   useEffect(() => {
+//     axios
+//       .get(`${base_url}/credpro/api/querylists/getAllQueries`)
+//       .then((response) => {
+//         setQueries(response.data);
+//       })
+//       .catch((error) => {
+//         console.error(error);
+//       });
+//   }, []);
+
+//   const handleDownload = (queryId) => {
+//     const url = `${base_url}/credpro/user/admin/${adminAuId}/execute-query/${queryId}`;
+//     window.open(url, "_blank");
+//   };
+
+//   return (
+//     <div>
+//       <h3>Assigned Queries:</h3>
+//       <table className="table table-striped">
+//         <thead>
+//           <tr>
+//             <th>Query ID</th>
+//             <th>Query Name</th>
+//             <th>Download</th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {queries.map((query) => (
+//             <tr key={query.queryId}>
+//               <td>{query.queryId}</td>
+//               <td>{query.queryName}</td>
+//               <td>
+//                 <Button
+//                   color="primary"
+//                   onClick={() => handleDownload(query.queryId)}
+//                 >
+//                   Download
+//                 </Button>
+//               </td>
+//             </tr>
+//           ))}
+//         </tbody>
+//       </table>
+//     </div>
+//   );
+// }
+
+// export default AdminQueryExecutionPage;
